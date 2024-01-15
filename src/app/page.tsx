@@ -1,8 +1,32 @@
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+
+import TypewriterTitle from '@/components/TypewriterTitle';
+import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <Button>Hi there</Button>
-  )
+    <div className="bg-gradient-to-r min-h-screen grainy from-blue-100 to-teal-100">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <h1 className="font-semibold text-7xl text-center">
+          AI <span className="text-green-600 font-bold">Job Simulation</span>{" "}
+          assistant.
+        </h1>
+        <div className="mt-4"></div>
+        <h2 className="font-semibold text-3xl text-center text-slate-700">
+          <TypewriterTitle />
+        </h2>
+        <div className="mt-8"></div>
+
+        <div className="flex justify-center">
+          <Link href="/create">
+            <Button className="bg-green-600">
+              Get Started
+              <ArrowRight className="ml-2 w-5 h-5" strokeWidth={3} />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
